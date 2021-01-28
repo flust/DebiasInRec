@@ -1,0 +1,77 @@
+# ctag
+tag
+tags
+
+# task file
+.task_file.tmp
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+train
+
+# Vim swp
+*.swp
+
+# Data
+ad.ffm
+ad.fm
+ad.mf
+item.ffm
+item.fm
+item.mf
+ob.te.ffm
+ob.tr.ffm
+ob.va.ffm
+ob.te.fm
+ob.tr.fm
+ob.va.fm
+ob.te.mf
+ob.tr.mf
+ob.va.mf
+ob.va.sub.ffm
+ob.va.sub.fm
+ob.va.sub.mf
+user.shuf.te.ffm
+user.shuf.te.fm
+user.shuf.te.mf
+user.shuf.tr.ffm
+user.shuf.tr.fm
+user.shuf.tr.mf
+user.shuf.va.ffm
+user.shuf.va.fm
+user.shuf.va.mf
+listener.*.ffm
+listener.*.fm
+listener.*.mf
+top_song*
+

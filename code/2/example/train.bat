@@ -1,0 +1,1 @@
+C:\Users\N8mare\Anaconda2\python.exe ../bin/train.py --lambdas 0.008,25 --numdims 40 --ratings data/train.ascii --propensities data/propensities.ascii

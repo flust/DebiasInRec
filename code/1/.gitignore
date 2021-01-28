@@ -1,0 +1,25 @@
+# trash
+*trash*
+
+# data
+*.remap
+item
+
+# binary
+train
+*.o
+
+# generated file
+*.IPS
+*.r_score
+*.model
+*.ips
+IPS-score
+remap
+
+# logs
+logs
+test-logs
+
+# vim tmp file
+*.swp

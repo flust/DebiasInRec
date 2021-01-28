@@ -1,0 +1,1 @@
+/usr/bin/python ../bin/test.py --test data/test.ascii --completed completed_ratings.ascii

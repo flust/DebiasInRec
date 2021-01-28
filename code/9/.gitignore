@@ -1,0 +1,56 @@
+*.ffm
+*.svm
+*.csv
+*.swp
+*.label
+*.cvt
+# *.bias
+*.gz
+tmp
+*ffm*bias
+__pycache__/
+build/
+
+# tmp file
+*.pyc
+*.tmp
+*.so
+*.stats
+*.stat
+*.swn
+*.swo
+*.swm
+*.param
+
+
+# model training 
+*.log
+*.pth
+*.pt
+
+# model output
+*.pred*
+*.prob*
+
+# data 
+#data
+#data/*
+kkbox.*
+ob.*
+Pva*
+Qva*
+*.lmdb
+
+# binary
+*.o
+*.model
+train
+predict-and-filter
+
+# tags
+tags
+
+
+# trash
+
+trash

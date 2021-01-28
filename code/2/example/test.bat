@@ -1,0 +1,1 @@
+C:\Users\N8mare\Anaconda2\python.exe ../bin/test.py --test data/test.ascii --completed completed_ratings.ascii
