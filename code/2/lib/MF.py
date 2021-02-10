@@ -5,6 +5,7 @@ import Metrics
 
 
 def PREDICTED_SCORES(user_vectors, item_vectors, user_biases, item_biases, global_bias, use_bias = True):
+    # 预测评分 user * item + userbias + itembias + globbias
     rawScores = numpy.dot(user_vectors, item_vectors.T)
     if use_bias:
         biasedScores = rawScores + user_biases[:,None] + item_biases[None,:] + global_bias

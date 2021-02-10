@@ -23,16 +23,20 @@ dcgJitter = None
        
 
 def SET_PROPENSITIES(observed_ratings, inverse_propensities, verbose = False):
-    numObservations = numpy.ma.count(observed_ratings)
-    numUsers, numItems = numpy.shape(observed_ratings)
-    scale = numUsers * numItems
-    inversePropensities = None
+    # observed_ratings: rating 矩阵
+    # inverse_prpensities: 倾向性
+    numObservations = numpy.ma.count(observed_ratings) # 数量
+    numUsers, numItems = numpy.shape(observed_ratings) # user, item 数量
+    scale = numUsers * numItems # user * item
+    inversePropensities = None 
+    # 如果输入的倾向性为None，就设置为全1
     if inverse_propensities is None:
         inversePropensities = numpy.ones((numUsers, numItems), dtype = numpy.longdouble) * scale /\
                             numObservations
     else:
         inversePropensities = numpy.array(inverse_propensities, dtype = numpy.longdouble, copy = True)
 
+    # 做mask
     inversePropensities = numpy.ma.array(inversePropensities, dtype = numpy.longdouble, copy = False, 
                             mask = numpy.ma.getmask(observed_ratings), fill_value = 0, hard_mask = True)
  
@@ -42,12 +46,14 @@ def SET_PROPENSITIES(observed_ratings, inverse_propensities, verbose = False):
         print "Metrics.SET_PROPENSITIES: [DBG]\t Sum of observed inverse propensities ", \
             numpy.ma.sum(inversePropensities, dtype = numpy.longdouble), \
             "(=? NumUsers * NumItems)", numUsers * numItems
-
+    # 返回 mask 后的 inversePropensity 矩阵
     return inversePropensities
 
 
 def ITEMWISE_METRICS(observed_ratings, predicted_ratings, inverse_propensities, verbose, mode = 'MSE'):
+    # 输入 真实值 预测值，倾向性评分
     delta = numpy.ma.subtract(predicted_ratings, observed_ratings)
+    # delta: 差值
     rectifiedDelta = None
     if mode == 'MSE':
         rectifiedDelta = numpy.square(delta)
@@ -85,6 +91,7 @@ def ITEMWISE_METRICS(observed_ratings, predicted_ratings, inverse_propensities, 
     # mask the num that less than 0.0
 
     perUserError = numpy.ma.sum(observedError, axis = 1, dtype = numpy.longdouble)
+    # axis = 1
     perUserEstimate = numpy.ma.divide(perUserError, perUserNormalizer)
     # only record the exist user
 
